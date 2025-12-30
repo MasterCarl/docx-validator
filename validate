@@ -12,7 +12,7 @@ for file in "$@"; do
   for i in "$tmpdir"/*.xml ; do
     xmllint --format "${i}" > "${i}.pretty.xml"
   done
-  XSD="./docx-validator/schemas/microsoft/wml-2010.xsd"
+  XSD="./schemas/microsoft/wml-2010.xsd"
   for i in "$tmpdir"/*.pretty.xml; do
     xmllint -noout -nonet \
       -schema "${XSD}" \
